@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DxTabsModule } from 'devextreme-angular';
-
+import { DxTreeViewModule } from 'devextreme-angular';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { DxTabsModule } from 'devextreme-angular';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DxTabsModule
+    DxTabsModule,
+    DxTreeViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]

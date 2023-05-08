@@ -10,4 +10,21 @@
       </dx-tabs>
   </div>
 </div>
-<router-outlet></router-outlet>
+<div class="row">
+  <div class="col-2">
+    <dx-tree-view
+      [dataSource]="listMenu"
+      dataStructure="plain"
+      keyExpr="ID"
+      displayExpr="name"
+      parentIdExpr="categoryId"
+      selectionMode="multiple"
+      [selectByClick]="true"
+      (onItemSelectionChanged)="selectMenu($event)"
+      >
+    </dx-tree-view>
+  </div>
+  <div class="col-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>

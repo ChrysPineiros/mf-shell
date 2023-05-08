@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuService, Menu } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,16 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'mf-shell';
+  listMenu: Menu[]=[];
   tabs = [
     { text: "User", icon: 'user' },
     { text: "Register", icon:'file' },
     { text: "find", icon: 'find', badge: "New",  }
   ];
-  
-  constructor(private router: Router) {}
+
+  constructor(private router: Router, service: MenuService) {
+    this.listMenu = service.getListMenu();
+  }
 
   onItemClick(e: any) {
     switch (e.itemData.text)
@@ -32,4 +36,23 @@ export class AppComponent {
             alert('no se encontro página');
       } 
   }
+
+  selectMenu(e: any) {
+    console.log(e);
+    switch (e.itemData.name)
+      {
+        case 'Agregar Usuario':
+            this.router.navigate(['/', 'user']);
+        break;
+        case 'Actualizar Usuario':
+            this.router.navigate(['/', 'register']);
+        break;
+        case 'Eliminar Usuario': 
+            console.log("Find");
+        break;
+        default: 
+            alert('no se encontro página');
+      } 
+  }
+
 }
