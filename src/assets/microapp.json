@@ -1,0 +1,37 @@
+[
+  {
+    "scope": "onboarding",
+    "name": "onboarding",
+    "urlResource": "http://localhost:4201/remoteEntry.js",
+    "layout": "fullpage",
+    "moduleName": "MFModule"
+  },
+  {
+    "scope": "consolidate-position",
+    "name": "mf_consolidate_position",
+    "urlResource": "http://localhost:4201/remoteEntry.js",
+    "layout": "dashboard",
+    "moduleName": "MFModule"
+  },
+  {
+    "scope": "user-management",
+    "name": "mfusermanagement",
+    "urlResource": "http://localhost:4201/remoteEntry.js",
+    "layout": "dashboard",
+    "moduleName": "MFModule"
+  },
+  {
+    "scope": "account-movements",
+    "name": "mfaccountmovements",
+    "urlResource": "http://localhost:4202/remoteEntry.js",
+    "layout": "dashboard",
+    "moduleName": "MFModule"
+  },
+  {
+    "scope": "credits-disbursement",
+    "name": "mfdesembolsos",
+    "urlResource": "https://empresasdev.pichincha.com/smd/remoteEntry.js",
+    "layout": "dashboard",
+    "moduleName": "MFModule"
+  }
+]

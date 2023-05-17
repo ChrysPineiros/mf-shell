@@ -1,0 +1,37 @@
+[
+    {
+      "scope": "onboarding",
+      "name": "onboarding",
+      "urlResource": "https://bancaempresastest.pichincha.com/micro-apps/app-business-banking-frontend-onboard-angular/remoteEntry.js",
+      "layout": "fullpage",
+      "moduleName": "MFModule"
+    },
+    {
+      "scope": "consolidate-position",
+      "name": "mf_consolidate_position",
+      "urlResource": "https://bancaempresastest.pichincha.com/micro-apps/app-business-banking-consolidate-position-angular/remoteEntry.js",
+      "layout": "dashboard",
+      "moduleName": "MFModule"
+    },
+    {
+      "scope": "user-management",
+      "name": "mfusermanagement",
+      "urlResource": "https://bancaempresastest.pichincha.com/micro-apps/app-business-banking-frontend-user-management-angular/remoteEntry.js",
+      "layout": "dashboard",
+      "moduleName": "MFModule"
+    },
+    {
+      "scope": "account-movements",
+      "name": "mfaccountmovements",
+      "urlResource": "https://bancaempresastest.pichincha.com/micro-apps/app-business-banking-frontend-accounts-movements-angular/remoteEntry.js",
+      "layout": "dashboard",
+      "moduleName": "MFModule"
+    },
+    {
+        "scope": "credits-disbursement",
+        "name": "mfdesembolsos",
+        "urlResource": "https://empresastest.pichincha.com/smd/remoteEntry.js",
+        "layout": "dashboard",
+        "moduleName": "MFModule"
+    }
+  ]
