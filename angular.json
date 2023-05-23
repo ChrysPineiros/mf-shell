@@ -96,7 +96,7 @@
 							]
 						}
 					},
-					"defaultConfiguration": "production"
+					"defaultConfiguration": "development"
 				},
 				"serve": {
 					"builder": "ngx-build-plus:dev-server",
@@ -109,10 +109,10 @@
 							"browserTarget": "mf-shell:build:development",
 							"extraWebpackConfig": "./webpack.config.js"
 						},
-						  "test": {
+						"test": {
 							"browserTarget": "mf-shell:build:test",
 							"extraWebpackConfig": "./webpack.config.js"
-						  }
+						}
 					},
 					"defaultConfiguration": "development",
 					"options": {
