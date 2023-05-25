@@ -20,4 +20,4 @@ export const microFrontendsTest = [
     remoteName: "mfRegister",
     exposedModule: "./RegisterModule"
 }
-]
+];

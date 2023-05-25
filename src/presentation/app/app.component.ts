@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuService, Menu } from './app.service';
+import { MenuUseCase } from 'src/domain/usecases/menu.usecase';
+import { MenuModel, TabModel } from 'src/domain/models/menu.model';
+import { MenuTabUseCase } from 'src/domain/usecases/menu-tab.usecase';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +11,11 @@ import { MenuService, Menu } from './app.service';
 })
 export class AppComponent {
   title = 'mf-shell';
-  listMenu: Menu[]=[];
-  tabs = [
-    { text: "User", icon: 'user' },
-    { text: "Register", icon:'file' },
-    { text: "find", icon: 'find', badge: "New",  }
-  ];
+  listMenu: MenuModel[]=[];
+  tabs: TabModel[]= [];
 
-  constructor(private router: Router, service: MenuService) {
-    this.listMenu = service.getListMenu();
+  constructor(private router: Router, private menuUseCase: MenuUseCase, private menuTabUseCase: MenuTabUseCase,) {
+    this.getMenu();
   }
 
   onItemClick(e: any) {
@@ -35,7 +33,7 @@ export class AppComponent {
         default: 
             alert('no se encontro página');
       } 
-  }
+  };
 
   selectMenu(e: any) {
     console.log(e);
@@ -49,10 +47,16 @@ export class AppComponent {
         break;
         case 'Eliminar Usuario': 
             console.log("Find");
+            this.getMenu();
         break;
         default: 
             alert('no se encontro página');
       } 
-  }
+  };
+
+  getMenu(){
+    this.menuTabUseCase.execute().subscribe( res => this.tabs = res);
+    this.menuUseCase.execute({ username:''}).subscribe( res => this.listMenu = res);
+  };
 
 }

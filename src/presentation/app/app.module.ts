@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DxTabsModule } from 'devextreme-angular';
 import { DxTreeViewModule } from 'devextreme-angular';
+import { DataModule } from 'src/data/data.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DxTreeViewModule } from 'devextreme-angular';
     BrowserModule,
     AppRoutingModule,
     DxTabsModule,
-    DxTreeViewModule
+    DxTreeViewModule,
+    DataModule
   ],
   providers: [],
   bootstrap: [AppComponent]

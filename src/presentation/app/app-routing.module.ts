@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
-import { environment } from '../environments/environment';
-import { microFrontendsDev } from 'src/assets/microapp-dev';
+import { environment } from '../../environments/environment';
 
 /* const routes: Routes = [
   {
