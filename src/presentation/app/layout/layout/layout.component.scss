@@ -1,0 +1,47 @@
+$wrap: "dashboard-layout";
+
+.#{$wrap} {
+  &__content-side {
+    padding-top: 66px;
+    float: left;
+    width:100% ;
+    & > div {
+      margin-left: 236px + 26px;
+      padding-right: 0px;
+    }
+    &--complete {
+      margin-left: 50px;
+    }
+  }
+
+  @media (max-width: 768px) and (min-width: 320px) {
+    .div-1000 {
+      margin-left: 24px;
+      padding-left: auto;
+      padding-right: 24px;
+    }
+  }
+
+  @media (max-width: 319px) and (min-width: 0px) {
+    .div-1000 {
+      margin-left: 16px;
+      padding-left: auto;
+      padding-right: 16px;
+    }
+  }
+  .div-1001 {
+    margin-left: 90px !important;
+  }
+
+  &__panel-side {
+    width: 272px;
+    position: relative;
+  }
+
+  &__clearfix {
+    clear: both;
+  }
+}
+.padding-16 {
+  padding-top: 68px;
+}

@@ -1,30 +1,12 @@
-<div class="container pb-5">
-  <img src="assets\images\BannerFondo1.png" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
-</div>
-<div class="row py-2">
-  <div class="col-8 offset-md-2">
-      <dx-tabs
-          [items]="tabs"
-          (onItemClick)="onItemClick($event)"
-      >
-      </dx-tabs>
-  </div>
-</div>
-<div class="row">
-  <div class="col-2">
-    <dx-tree-view
-      [dataSource]="listMenu"
-      dataStructure="plain"
-      keyExpr="ID"
-      displayExpr="name"
-      parentIdExpr="categoryId"
-      selectionMode="multiple"
-      [selectByClick]="true"
-      (onItemSelectionChanged)="selectMenu($event)"
-      >
-    </dx-tree-view>
-  </div>
-  <div class="col-8">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+<dx-popup
+    [(visible)]="isPopupVisible"
+    [hideOnOutsideClick]="true">
+    <!-- ... -->
+    <cne-data-grid [datasource]="[{ id: 1, name: 'linea 1',perro:'asasgsa' }, { id: 2, name: 'linea 2',perro:'asssss' }]"  [columns]="['id','name','perro']" [(selectedRowKeys)]="datas" [keyExpr]="'id'" selection_mode="multiple"></cne-data-grid>
+</dx-popup>
+<!-- <dx-button
+    text="Open popup"
+    (onClick)="togglePopup()">
+</dx-button> -->
+<app-layout></app-layout>
+<router-outlet></router-outlet>

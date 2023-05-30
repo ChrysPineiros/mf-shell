@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'node_modules/@mycne/lib-design-system/assets/styles.scss';
+
+body, html {
+    margin: 0;
+    padding: 0;
+    //background-color: var(--darkGrayishBlue100);
+    width: 100%;
+    height: 100%;
+  
+  }

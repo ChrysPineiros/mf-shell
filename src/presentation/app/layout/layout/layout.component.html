@@ -1,0 +1,72 @@
+<!-- <div class="container pb-5">
+    <app-top-header (logout)="onLogout()" [business]="business" [user]="topHeader"></app-top-header>
+</div> -->
+<div class="dashboard-layout">
+  <div class="pb-5">
+    <app-top-header (logout)="onLogout()" [user]="topHeader"></app-top-header>
+  </div>
+
+  <div class="row py-2">
+    <div class="col-8 offset-md-2">
+        <dx-tabs
+            [items]="tabs"
+            (onItemClick)="onItemClick($event)"
+        >
+        </dx-tabs>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <dx-tree-view
+        [dataSource]="listMenu"
+        dataStructure="plain"
+        keyExpr="ID"
+        displayExpr="name"
+        parentIdExpr="categoryId"
+        selectionMode="multiple"
+        [selectByClick]="true"
+        (onItemSelectionChanged)="selectMenu($event)"
+        >
+      </dx-tree-view>
+    </div>
+    <div class="col-8">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<!-- <div class="dashboard-layout">
+  <div class="pb-5">
+    <app-top-header (logout)="onLogout()" [business]="business" [user]="topHeader"></app-top-header>
+  </div>
+  <div class="row py-2">
+    <div class="col-8 offset-md-2">
+        <dx-tabs
+            [items]="tabs"
+            (onItemClick)="onItemClick($event)"
+        >
+        </dx-tabs>
+    </div>
+  </div>
+  <div class="dashboard-layout__panel-side">
+    <dx-tree-view
+        [dataSource]="listMenu"
+        dataStructure="plain"
+        keyExpr="ID"
+        displayExpr="name"
+        parentIdExpr="categoryId"
+        selectionMode="multiple"
+        [selectByClick]="true"
+        (onItemSelectionChanged)="selectMenu($event)"
+        >
+      </dx-tree-view>
+  </div>
+  <main class="dashboard-layout__content-side padding-16" appFullHeight="">
+    <div  [ngClass]="{ 'div-1000': !hiden, 'div-1001': hiden }">
+      <router-outlet></router-outlet>
+    </div>
+    <div  [ngClass]="{ 'div-1000': !hiden, 'div-1001': hiden }" >
+      footer
+    </div>
+  </main>
+  <div class="dashboard-layout__clearfix"></div>
+</div> -->
