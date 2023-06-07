@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DxButtonModule, DxPopupModule, DxTabsModule } from 'devextreme-angular';
+import { DxTabsModule } from 'devextreme-angular';
 import { DxTreeViewModule } from 'devextreme-angular';
 import { DataModule } from 'src/data/data.module';
 import { LayoutComponent } from './layout/layout/layout.component';
@@ -20,8 +20,6 @@ import { LibDesignSystemModule } from '@mycne/lib-design-system';
     AppRoutingModule,
     DxTabsModule,
     DxTreeViewModule,
-    DxPopupModule,
-    DxButtonModule,
     DataModule,
     LibDesignSystemModule
   ],

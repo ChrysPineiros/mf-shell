@@ -1,12 +1,18 @@
-<dx-popup
-    [(visible)]="isPopupVisible"
-    [hideOnOutsideClick]="true">
-    <!-- ... -->
-    <cne-data-grid [datasource]="[{ id: 1, name: 'linea 1',perro:'asasgsa' }, { id: 2, name: 'linea 2',perro:'asssss' }]"  [columns]="['id','name','perro']" [(selectedRowKeys)]="datas" [keyExpr]="'id'" selection_mode="multiple"></cne-data-grid>
-</dx-popup>
-<!-- <dx-button
-    text="Open popup"
-    (onClick)="togglePopup()">
-</dx-button> -->
+
+<cne-popup-grid
+  [isPopupVisible]="isPopupVisible"
+  [hideOnOutsideClick]="false"
+  [showCloseButton]="false"
+  [title]="'SELECCIÓN DEL PROCESO'"
+  [height]="350"
+  [width]="700"
+  [pageSize]="5"
+  [dataSource]="processList"
+  [keyExpr]="'code'"
+  [enabled]="true"
+  [columns]="columnsProcess"
+  (onSelectionChanged)="selectProcess($event)"
+></cne-popup-grid>
+
 <app-layout></app-layout>
 <router-outlet></router-outlet>

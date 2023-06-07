@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { MenuUseCase } from 'src/domain/usecases/menu.usecase';
-import { MenuModel, TabModel } from 'src/domain/models/menu.model';
-import { MenuTabUseCase } from 'src/domain/usecases/menu-tab.usecase';
+import { ProcessModel } from 'src/domain/models/process.model';
+import { ProcessUseCase } from 'src/domain/usecases/process.usecase';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +9,17 @@ import { MenuTabUseCase } from 'src/domain/usecases/menu-tab.usecase';
 })
 export class AppComponent {
   isPopupVisible: boolean;
-  datas:string[]=['1','2'];
- 
-    constructor() {
+  processList: ProcessModel[] = [];
+  columnsProcess = [{name: 'Id', field: 'id'}, {name: 'Código', field: 'code'}, {name: 'Descripción', field: 'description'}];
+    constructor(private processUseCase: ProcessUseCase) {
         this.isPopupVisible = true;
+        this.processUseCase.execute().subscribe( res => this.processList = res);
     }
- 
-    togglePopup(): void {
-        this.isPopupVisible = !this.isPopupVisible;
+
+    selectProcess(e: any): void {
+      if(e.selectedRowsData.length === 1){
+        console.log('process: ', e.selectedRowsData[0]);
+        this.isPopupVisible = false;
+      }
     }
 }

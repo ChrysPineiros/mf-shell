@@ -14,7 +14,7 @@ const moduleFederationConfig = withModuleFederationPlugin({
     //"@angular/common": { singleton: true, strictVersion: true },
     "@angular/router": { singleton: true, strictVersion: true },
     "@angular/common/http": { singleton: true, strictVersion: true },
-    "@mycne/lib-design-system":  { singleton: true, strictVersion: true, requiredVersion: '0.0.9' },
+    "@mycne/lib-design-system":  { singleton: true, strictVersion: true, requiredVersion: '0.0.11' },
   }),
 
   

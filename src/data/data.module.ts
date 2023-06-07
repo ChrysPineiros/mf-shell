@@ -9,6 +9,9 @@ import { MenuImplementationRepository } from './repositories/menu-implementation
 import { MenuUseCase } from 'src/domain/usecases/menu.usecase';
 import { MenuTabUseCase } from 'src/domain/usecases/menu-tab.usecase';
 import { MenuTabImplementationRepository } from './repositories/menu-tab-implementation.repository';
+import { ProcessUseCase } from 'src/domain/usecases/process.usecase';
+import { ProcessRepository } from 'src/domain/repositories/process.repository';
+import { ProcessImplementationRepository } from './repositories/process-implementation.repository';
 
 const loginUseCaseFactory = 
 (loginRepo: LoginRepository) => new LoginUseCase(loginRepo);
@@ -34,15 +37,25 @@ export const menuTabUseCaseProvider = {
     deps: [MenuTabRepository],
 };
 
+const processCaseFactory = 
+(processRepo: ProcessRepository) => new ProcessUseCase(processRepo);
+export const processUseCaseProvider = {
+    provide: ProcessUseCase,
+    useFactory: processCaseFactory,
+    deps: [ProcessRepository],
+};
+
 @NgModule({
   declarations: [],
   providers: [
     userLoginUseCaseProvider,
     menuUseCaseProvider,
     menuTabUseCaseProvider,
+    processUseCaseProvider,
     { provide: LoginRepository, useClass: LoginImplementationRepository },
     { provide: MenuRepository, useClass: MenuImplementationRepository },
-    { provide: MenuTabRepository, useClass: MenuTabImplementationRepository }
+    { provide: MenuTabRepository, useClass: MenuTabImplementationRepository },
+    { provide: ProcessRepository, useClass: ProcessImplementationRepository }
   ],
   imports: [
     CommonModule,
